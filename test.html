@@ -1,2 +1,52 @@
-hello world 
-zhao jin wei 
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"> 
+<head>
+	<title>js第一张13页</title>
+<style type="text/css">
+
+#hi{
+	width: 200px;
+	height: 300px;
+	background: blue;
+	line-height: 300px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+ <div id="hi" onclick="moveon()">
+    <h2>hi world!</h2>
+ </div>
+<script type="text/javascript">
+    var ohi = document.getElementById("hi");
+    
+    ohi.onclick = function moveon(){   	    
+   	  	ohi.style.background = "red";
+   }
+   //在document中的一个指定的区域输出调试信息
+   //如果document不存在这样一个区域，则创建一个
+   function debug () {
+   	//通过查看html元素id属性来查找文档的调试部分
+   	var log = document.getElementById("debuglog");
+
+   	//如果不存在则创建一个
+   	if (!log) {
+   		log = document.createElement("div");
+   		log.id = "degbuglog";
+   		log.style.width = "300px";
+   		log.style.height = "500px";
+   		log.innerHTML = "<h1>Debug Log</h1>";
+   		document.body.appendChild(log);//将其添加到文档的末尾
+   	}
+   	//将消息包装在<pre>中，并添加至log中
+   	var pre = document.createElement("pre");//创建<pre>标签
+   	var text = document.createTextNode(msg);//将msg包装在一个文本节点中
+   	pre.appendChild(text);                  //将文本添加至<pre>
+   	log.appendChild(pre);                   //将<pre>添加至log
+
+   }
+
+</script>
+</body>
+</html>
